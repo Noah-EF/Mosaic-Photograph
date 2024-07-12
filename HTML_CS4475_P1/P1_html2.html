@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computational Photography Homework</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('output_final1.jpg') repeat;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .overview {
+            margin-bottom: 40px;
+        }
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+        }
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .carousel img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .carousel-control-prev {
+            left: 10px;
+        }
+        .carousel-control-next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CS4475 Computational Photography Project 1 | Team Ducks</h1>
+        
+        <section class="overview">
+            <h2>High-Level Overview of the Algorithm</h2>
+            <p>Our algorithm will take an input image, and make a mosaic of the image by taking smaller versions of the input image to use as tiles, and shading each tile the average color of the section of the original image that the tile fills. Note: these images are at reduced resolution for web use.</p>
+        </section>
+
+        <section class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="sq_mosaic_wall.jpg" alt="Input Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="output_final1.jpg" alt="Output Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="camel1.JPEG" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="output_camel1.jpg" alt="Image 12">
+                </div>
+                <div class="carousel-item">
+                    <img src="M_Camels.JPEG" alt="Image 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="out-marrakech_camels.jpg" alt="Image 9">
+                </div>
+                <div class="carousel-item">
+                    <img src="M_Market.JPEG" alt="Image 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="Marrakech_sign.JPEG" alt="Image 5">
+                </div>
+                <div class="carousel-item">
+                    <img src="out-marrakech.jpg" alt="Image 8">
+                </div>
+                <div class="carousel-item">
+                    <img src="mosque_fountain.jpg" alt="Image 7">
+                </div>
+                <div class="carousel-item">
+                    <img src="output_mosque2.jpg" alt="Image 15">
+                </div>
+                <div class="carousel-item">
+                    <img src="out-marrakech_market.jpg" alt="Image 10">
+                </div>
+                <div class="carousel-item">
+                    <img src="out-marrakech_mosque.jpg" alt="Image 11">
+                </div>
+            </div>
+            <button class="carousel-control-prev" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-control-next" onclick="nextSlide()">&#10095;</button>
+        </section>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel-item');
+            if (index >= slides.length) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = slides.length - 1;
+            } else {
+                currentIndex = index;
+            }
+            const offset = -currentIndex * 100;
+            document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentIndex);
+        });
+    </script>
+</body>
+</html>
