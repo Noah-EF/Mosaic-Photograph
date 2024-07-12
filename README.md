@@ -10,5 +10,5 @@ Code for the transformation is found in mosaic_creator.py and transformers.py
 
 Input Image            |  Output Image
 :-------------------------:|:-------------------------:
-<img src="HTML_CS4475_P1/mosaic-wall.jpg" width="400"> |  <img src="HTML_CS4475_P1/output_final_mosaic.jpg" width="400">
+<img src="HTML_CS4475_P1/mosaic-wall.jpg" width="500"> |  <img src="HTML_CS4475_P1/output_final_mosaic.jpg" width="500">
 
