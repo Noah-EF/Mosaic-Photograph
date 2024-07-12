@@ -1,10 +1,14 @@
-# 4475_Project1
+# 4475_Project1: Photo Mosaic
 
-Currently supports rectangular images and pixels as well as outputs of different resolution than input
+Developed by Noah Flanagan, Annarose Hilhorst, Dylan Paige, and Maxine Spencer
 
-In progress:
-Test cases
-Command line support (basically code from Annarose branch needs to come over)
+Running the mosaic_creator.py file with parameters of the input file path and desired output filepath.
+Code for the transformation is found in mosaic_creator.py and transformers.py
 
-Could also be done:
-add support for not having to specific valid size variable (currently must be a factor of input height and width respectively)
+
+
+
+Input Image            |  Output Image
+:-------------------------:|:-------------------------:
+<img src="HTML_CS4475_P1/mosaic-wall.jpg" width="400"> |  <img src="HTML_CS4475_P1/output_final_mosaic.jpg" width="400">
+
